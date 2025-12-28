@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAWAVE - Réussir son Business en RDC 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-indigo {
+            background: linear-gradient(135deg, #4F46E5 0%, #3730a3 100%);
+        }
+
+        .orange-glow {
+            box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.4);
+        }
+
+        .ebook-shadow {
+            box-shadow: 25px 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-blur {
+            backdrop-filter: blur(8px);
+            background: rgba(15, 23, 42, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="fixed w-full z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-tighter text-[#4F46E5]">
+                MAWAVE<span class="text-slate-900">.</span>
+            </div>
+            <button onclick="openModal()" class="bg-[#F97316] text-white px-6 py-2.5 rounded-full font-bold text-sm orange-glow hover:scale-105 transition-transform">
+                Obtenir l'Ebook
+            </button>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center pt-20 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8 order-2 lg:order-1 text-center lg:text-left">
+                <div class="inline-block bg-indigo-50 text-[#4F46E5] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                    Solution Business RDC 2026
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-slate-900">
+                    Réussir son Business Digital en <span class="text-[#4F46E5]">RDC</span>
+                </h1>
+                <p class="text-xl text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Comment vendre quand l'argent est rare ? Découvrez les secrets du terrain congolais pour transformer votre activité.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start">
+                        <button onclick="openModal()" class="w-full sm:w-auto bg-[#F97316] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-wider text-sm orange-glow hover:bg-[#ea580c] transition-all">
+                            Commander mon exemplaire
+                        </button>
+                        <div class="flex flex-col text-center sm:text-left">
+                            <span class="text-2xl font-black text-slate-900 leading-none">15.000 CDF</span>
+                            <span class="text-xs font-bold text-slate-400 line-through mt-1">Valeur : 20$ (50.000 CDF)</span>
+                        </div>
+                    </div>
+                    <p class="text-sm font-bold text-[#F97316] animate-pulse">
+                         ⚠️ Offre prolongée ! Prix promotionnel valable jusqu'au 03 Janvier 2026
+                    </p>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 flex justify-center">
+                <div class="w-72 h-[420px] md:w-80 md:h-[480px] gradient-indigo rounded-r-xl ebook-shadow relative flex flex-col p-8 text-white border-l-[12px] border-black/20">
+                    <div class="mt-4">
+                        <div class="h-1.5 w-12 bg-[#F97316] mb-8"></div>
+                        <p class="text-[10px] font-black uppercase tracking-[0.3em] opacity-70 mb-2">Guide Stratégique</p>
+                        <h2 class="text-3xl font-black leading-tight mb-4">Réussir son Business Digital en RDC</h2>
+                        <p class="text-sm opacity-90 font-medium">Comment vendre quand l'argent est rare.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <p class="text-[10px] font-bold opacity-50 uppercase mb-1 text-white">Édité par</p>
+                        <p class="text-xl font-black tracking-tighter italic">MAWAVE</p>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="orderModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-blur">
+        <div class="bg-white w-full max-w-lg rounded-[2.5rem] shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            
+            <div class="p-8 md:p-12">
+                <h3 class="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tighter">Finaliser la commande</h3>
+                <p class="text-slate-500 text-sm mb-8 font-medium italic">Le livre sera envoyé à votre adresse e-mail après vérification.</p>
+                
+                <form id="purchaseForm" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Votre Adresse E-mail</label>
+                        <input type="email" id="userEmail" required placeholder="nom@exemple.com" 
+                            class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-[#4F46E5] outline-none font-medium transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Numéro de Téléphone (WhatsApp)</label>
+                        <input type="tel" id="userPhone" required placeholder="+243..." 
+                            class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-[#4F46E5] outline-none font-medium transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Moyen de Paiement</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="relative cursor-pointer group">
+                                <input type="radio" name="payment" value="M-Pesa" required class="peer sr-only">
+                                <div class="p-4 border-2 border-slate-100 rounded-2xl text-center font-bold text-slate-600 peer-checked:border-[#4F46E5] peer-checked:bg-indigo-50 peer-checked:text-[#4F46E5] transition-all">
+                                    M-Pesa
+                                </div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="payment" value="Airtel Money" class="peer sr-only">
+                                <div class="p-4 border-2 border-slate-100 rounded-2xl text-center font-bold text-slate-600 peer-checked:border-[#4F46E5] peer-checked:bg-indigo-50 peer-checked:text-[#4F46E5] transition-all">
+                                    Airtel Money
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-[#F97316] text-white py-5 rounded-2xl font-black uppercase tracking-widest shadow-xl shadow-orange-200 hover:scale-[1.02] active:scale-95 transition-all mt-4">
+                        Valider la Commande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('orderModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('purchaseForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+            const method = document.querySelector('input[name="payment"]:checked').value;
+            const price = "15.000 CDF (Offre prolongée jusqu'au 03/01/2026)";
+            const bookTitle = "Réussir son Business Digital en RDC";
+            const adminEmail = "tourenmails@gmail.com";
+
+            const subject = encodeURIComponent(`Nouvelle Commande Ebook : ${bookTitle}`);
+            
+            const body = encodeURIComponent(
+                `DÉTAILS DE MA COMMANDE :\n` +
+                `--------------------------\n` +
+                `Article : ${bookTitle}\n` +
+                `Client : ${email}\n` +
+                `Téléphone : ${phone}\n` +
+                `Prix promotionnel : ${price}\n` +
+                `Moyen de paiement : ${method}\n\n` +
+                `J'ai profité de l'offre prolongée. J'attends vos instructions de paiement.`
+            );
+
+            window.location.href = `mailto:${adminEmail}?subject=${subject}&body=${body}`;
+            
+            setTimeout(() => {
+                closeModal();
+            }, 500);
+        };
+    </script>
+
+    <footer class="py-12 text-center text-slate-400 text-xs font-bold uppercase tracking-[0.2em] border-t border-slate-100">
+        © 2026 MAWAVE - Stratégies de Croissance en RDC
+    </footer>
+
+</body>
+</html>
